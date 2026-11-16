@@ -1,0 +1,14 @@
+header .header-container {
+  padding: 15px;
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid rgba(88, 87, 87, 0.379);
+
+}
+
+header .header-container img {
+    height: 45px;
+}

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --main-purple: #7B2EF2;
+    --paragraph-color: #9C94AE;
+    --background-website: #0B0812;
+    --title-color: #F3EFFA;
+    --page-width: 1800px;
+}
+
+body {
+    background-color: var(--background-website);
+    height: 200vh;
+    font-family: "Inter", sans-serif;
+}
+
+.webpage-container {
+    max-width: var(--page-width);
+    margin: 0 auto;
+}
+
+h1,p {
+    color: var(--paragraph-color);
+}
+
