@@ -1,3 +1,34 @@
-h1 {
+
+
+.home-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding-top: 4rem;
+}
+
+.home-section  h1 {
     color: var(--title-color);
+    font-size: 3.5rem;
+}
+
+.home-section .text-box {
+    display: grid;
+    gap: 15px;
+}
+
+.text-box .highlighted-title {
+    color: var(--main-purple);
+}
+
+.home-section .text-box .search-input {
+    margin-top: 10px;
+}
+
+.home-section .text-box p {
+    line-height: 25px;
+    font-size: 17px;
+}
+
+.filter-container {
+    margin: 20px 0;
 }

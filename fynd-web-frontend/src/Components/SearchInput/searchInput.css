@@ -1,0 +1,16 @@
+.search-input {
+    color: var(--paragraph-color);
+    background-color: var(--card-background);
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #2A2338;
+    padding: 0 20px;
+    font-size: 16px;
+
+    height: 50px;
+    width: 100%
+}
+
+.search-input::placeholder {
+  color: #6E6683;
+}

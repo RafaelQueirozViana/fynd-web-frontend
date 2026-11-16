@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function FilterItem() {
+export default function FilterItem({category}) {
   return (
-    <div>FilterItem</div>
+    <button className='filter-item'>{category}</button>
   )
 }

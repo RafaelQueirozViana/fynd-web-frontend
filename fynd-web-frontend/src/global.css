@@ -4,8 +4,15 @@
     --main-purple: #7B2EF2;
     --paragraph-color: #9C94AE;
     --background-website: #0B0812;
+    --card-background: #14101E;
     --title-color: #F3EFFA;
-    --page-width: 1800px;
+    --page-width: 1600px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -23,3 +30,11 @@ h1,p {
     color: var(--paragraph-color);
 }
 
+p,button {
+    font-size: 16px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from './Components/Header/Header'
 import "./global.css"
 import Home from './Pages/Home/Home'
+import FilterContainer from './Components/Filters/FilterContainer'
 
 
 
@@ -13,6 +14,7 @@ function App() {
       <Header/>
     <div className="webpage-container">
       <Home/>
+  
   
 
     </div>
