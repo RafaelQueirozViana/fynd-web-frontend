@@ -3,6 +3,8 @@ import "./home.css";
 import SearchInput from '../../Components/SearchInput/SearchInput';
 import FilterContainer from '../../Components/Filters/FilterContainer';
 import StatisticContainer from './Components/Statistics/StatisticContainer';
+import ObjectContainer from './Components/FoundObjects/ItemsListContainer';
+import ItemsListContainer from './Components/FoundObjects/ItemsListContainer';
 
 
 const categoriesList = ['Todas', 'Eletrônicos', 'Documentos', 'Roupas', 'Acessórios', 'Chaves', 'Bolsas e mochilas', 'Outros'];
@@ -19,14 +21,24 @@ export default function Home() {
     </div>
     </section>
 
-  <section >
+  <section className='categories-section'>
     <FilterContainer filtersList={categoriesList}/>
   </section>
 
-  <section>
+  <section className='statistics-section'>
     <StatisticContainer/>
+  </section>
+
+  <section className='found-objects-section'>
+    <h1 className='section-title'>Encontrados recentemente</h1>
+
+  <ItemsListContainer/>
+
 
   </section>
+
+
+
     </>
 
 

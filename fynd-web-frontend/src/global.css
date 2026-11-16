@@ -6,6 +6,7 @@
     --background-website: #0B0812;
     --card-background: #14101E;
     --title-color: #F3EFFA;
+    --border-color: #2A2338;
     --page-width: 1600px;
 }
 
@@ -26,7 +27,11 @@ body {
     margin: 0 auto;
 }
 
-h1,p {
+h1 {
+    color: #fff;
+}
+
+p {
     color: var(--paragraph-color);
 }
 

@@ -1,0 +1,38 @@
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 380px));
+    gap: 20px;
+}
+
+.object-card {
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
+    background-color: var(--card-background);
+    height: 400px;
+    border-radius: 20px;
+  
+}
+
+.object-image {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJqrYLbL-wUtEMg4hV-UAlkTNVbzmfvBs7ThZXp-d5MbqQPteYo-8KmEE&s=10);
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.object-info {
+    display: grid;
+    gap: 15x;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.object-info .object-name {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.object-info .object-category {
+    color: var(--main-purple);
+    font-size: 18px;
+}

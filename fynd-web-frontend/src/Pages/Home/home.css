@@ -1,3 +1,8 @@
+.webpage-container {
+    display: grid;
+    gap: 35px;
+}
+
 .top-section {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -27,6 +32,9 @@
     font-size: 17px;
 }
 
-.filter-container {
-    margin: 20px 0;
+
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 500;
 }
