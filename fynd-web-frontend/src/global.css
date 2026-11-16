@@ -22,9 +22,12 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-.webpage-container {
-    max-width: var(--page-width);
-    margin: 0 auto;
+ul,li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 h1 {
@@ -33,13 +36,18 @@ h1 {
 
 p {
     color: var(--paragraph-color);
-}
-
-p,button {
     font-size: 16px;
 }
 
 button {
+    font-size: 16px;
     border: none;
     cursor: pointer;
 }
+
+
+.webpage-container {
+    max-width: var(--page-width);
+    margin: 0 auto;
+}
+
