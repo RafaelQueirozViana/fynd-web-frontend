@@ -1,17 +1,15 @@
-
-
-.home-section {
+.top-section {
     display: grid;
     grid-template-columns: 1fr 2fr;
     padding-top: 4rem;
 }
 
-.home-section  h1 {
+.top-section  h1 {
     color: var(--title-color);
     font-size: 3.5rem;
 }
 
-.home-section .text-box {
+.top-section .text-box {
     display: grid;
     gap: 15px;
 }
@@ -20,11 +18,11 @@
     color: var(--main-purple);
 }
 
-.home-section .text-box .search-input {
+.top-section .text-box .search-input {
     margin-top: 10px;
 }
 
-.home-section .text-box p {
+.top-section .text-box p {
     line-height: 25px;
     font-size: 17px;
 }

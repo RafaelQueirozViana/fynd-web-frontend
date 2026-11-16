@@ -1,0 +1,22 @@
+.statistic-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.statistic-card {
+  display: grid;
+  gap: 10px;
+  background-color: var(--card-background);
+  padding: 20px;
+  border-radius: 15px;
+
+}
+
+.statistic-number {
+    color: var(--main-purple);
+    font-size: 2rem;
+    font-weight: 600;
+}
