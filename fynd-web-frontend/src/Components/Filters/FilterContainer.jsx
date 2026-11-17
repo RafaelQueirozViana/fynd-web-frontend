@@ -4,20 +4,19 @@ import FilterItem from './FilterItem';
 
 
 
-export default function FilterContainer({filtersList}) {
-
-  const [selectedFilter, setSelectedFilter] = React.useState("Todas"); 
-
-  function changeFilter(value) {
-    setSelectedFilter(value)
+export default function FilterContainer({filtersList, currentFilter,setFilter}) {
+  function changeFilter(filter) {
+    setFilter(filter);
   }
 
   return (
    <ul className='filter-container'>
 
-  {filtersList.map(filter =>
-     <li key={filter}><FilterItem category={filter} isSelected={selectedFilter == filter} onSelect={changeFilter} /></li>
-     
+  {filtersList.map(filter => {
+    return <FilterItem key={filter} category={filter} isSelected={filter == currentFilter} onSelect={changeFilter} />
+
+  }
+   
 
      )}
     

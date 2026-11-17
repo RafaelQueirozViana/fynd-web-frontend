@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./home.css";
 import SearchInput from '../../Components/SearchInput/SearchInput';
 import FilterContainer from '../../Components/Filters/FilterContainer';
 import StatisticContainer from './Components/Statistics/StatisticContainer';
-import ObjectContainer from './Components/FoundObjects/ItemsListContainer';
-import ItemsListContainer from './Components/FoundObjects/ItemsListContainer';
+import ObjectContainer from './Components/ItemsSection/ItemsListContainer';
+import ItemsListContainer from './Components/ItemsSection/ItemsListContainer';
 
 
 const categoriesList = ['Todas', 'Eletrônicos', 'Documentos', 'Roupas', 'Acessórios', 'Chaves', 'Bolsas e mochilas', 'Outros'];
 
 
+
+
 export default function Home() {
+const [selectedFilter, setSelectedFilter] = React.useState("Atual")
+
+
   return (
     <>
     <section className='top-section'>
@@ -22,7 +27,7 @@ export default function Home() {
     </section>
 
   <section className='categories-section'>
-    <FilterContainer filtersList={categoriesList}/>
+    <FilterContainer filtersList={categoriesList} currentFilter={selectedFilter} setFilter={setSelectedFilter}/>
   </section>
 
   <section className='statistics-section'>

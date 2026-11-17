@@ -5,9 +5,9 @@ import "./statistics.css"
 export default function StatisticContainer() {
   return (
     <div className='statistic-container'>
-        <StatCard text="Objetos atualmente perdidos"/>
-        <StatCard text="Itens cadastrados no ano"/>
+        <StatCard text="Objetos perdidos"/>
         <StatCard text="Devolvidos aos donos"/>
+        <StatCard text="Tempo médio"/>
     </div>
   )
 }
