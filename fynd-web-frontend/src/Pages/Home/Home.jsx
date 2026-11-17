@@ -10,11 +10,9 @@ import ItemsListContainer from './Components/ItemsSection/ItemsListContainer';
 const categoriesList = ['Todas', 'Eletrônicos', 'Documentos', 'Roupas', 'Acessórios', 'Chaves', 'Bolsas e mochilas', 'Outros'];
 
 
-
-
 export default function Home() {
-const [selectedFilter, setSelectedFilter] = React.useState("Atual")
 
+const [selectedCategory, setSelectedCategory] = React.useState("Todas")
 
   return (
     <>
@@ -27,7 +25,7 @@ const [selectedFilter, setSelectedFilter] = React.useState("Atual")
     </section>
 
   <section className='categories-section'>
-    <FilterContainer filtersList={categoriesList} currentFilter={selectedFilter} setFilter={setSelectedFilter}/>
+    <FilterContainer filtersList={categoriesList} currentFilter={selectedCategory} setFilter={setSelectedCategory}/>
   </section>
 
   <section className='statistics-section'>
@@ -36,10 +34,7 @@ const [selectedFilter, setSelectedFilter] = React.useState("Atual")
 
   <section className='found-objects-section'>
     <h1 className='section-title'>Encontrados recentemente</h1>
-
-  <ItemsListContainer/>
-
-
+    <ItemsListContainer selectedFilter={selectedCategory}/>
   </section>
 
 
