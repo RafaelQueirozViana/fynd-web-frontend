@@ -4,8 +4,6 @@ import "./global.css"
 import Home from './Pages/Home/Home'
 import FilterContainer from './Components/Filters/FilterContainer'
 
-
-
 function App() {
   const [count, setCount] = useState(0)
 
