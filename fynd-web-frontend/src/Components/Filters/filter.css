@@ -3,8 +3,7 @@
     background-color: var(--card-background);
     color: var(--paragraph-color);
     border-radius: 20px;
- 
-   
+    width: max-content;
 }
 
 .filter-item.selected {

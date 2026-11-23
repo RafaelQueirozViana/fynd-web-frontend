@@ -1,0 +1,21 @@
+.admin-top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--section-top-spacing);
+}
+
+.admin-top .text-box {
+    display: grid;
+    gap: 10px;
+}
+
+.admin-top .objects-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.admin-top  .filter-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
