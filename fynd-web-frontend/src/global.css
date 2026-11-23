@@ -8,6 +8,7 @@
     --title-color: #F3EFFA;
     --border-color: #2A2338;
     --page-width: 1600px;
+    --section-top-spacing: 4rem;
 }
 
 * {

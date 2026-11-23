@@ -6,7 +6,7 @@
 .top-section {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    padding-top: 4rem;
+    padding-top: var(--section-top-spacing);
 }
 
 .top-section  h1 {
