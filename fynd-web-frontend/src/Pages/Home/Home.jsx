@@ -4,19 +4,10 @@ import SearchInput from "../../Components/SearchInput/SearchInput";
 import FilterContainer from "../../Components/Filters/FilterContainer";
 import ItemsListContainer from "../../Components/ItemsSection/ItemsListContainer";
 import StatisticContainer from "./Components/Statistics/StatisticContainer";
-
-const categoriesList = [
-  "todas",
-  "eletrônicos",
-  "documentos",
-  "roupas",
-  "acessórios",
-  "chaves",
-  "bolsas e mochilas",
-  "outros",
-];
+import useCategories from "../../hooks/useCategories";
 
 export default function Home() {
+  const [categoriesList] = useCategories();
   const [selectedCategory, setSelectedCategory] = React.useState("todas");
 
   return (

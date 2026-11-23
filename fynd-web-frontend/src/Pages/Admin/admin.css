@@ -11,7 +11,9 @@
 
 .admin-top .objects-nav {
     display: flex;
+    align-items: center;
     gap: 20px;
+    margin-top: 10px;
 }
 
 .admin-top  .filter-container {
