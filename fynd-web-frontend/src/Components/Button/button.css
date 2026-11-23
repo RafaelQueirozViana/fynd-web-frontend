@@ -1,0 +1,6 @@
+.primary-button {
+    background-color: var(--main-purple);
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 10px;
+}

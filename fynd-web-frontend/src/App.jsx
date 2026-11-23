@@ -34,6 +34,8 @@ function App() {
               </WebpageLayout>
             }
           ></Route>
+
+          <Route path="*" element={<div>HTTP 404 - Not Found</div>}></Route>
         </Routes>
       </BrowserRouter>
     </>
