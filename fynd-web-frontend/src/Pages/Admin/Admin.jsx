@@ -3,11 +3,12 @@ import SearchInput from "../../Components/SearchInput/SearchInput";
 import FilterContainer from "../../Components/Filters/FilterContainer";
 import Button from "../../Components/Button/Button";
 import "./admin.css";
+import ItemsListContainer from "../../Components/ItemsSection/ItemsListContainer";
 
-const statusList = ["Aguardando dono", "Devolvidos"];
+const statusList = ["aguardando dono", "devolvido"];
 
 export default function Admin() {
-  const [status, setStatus] = React.useState("Aguardando dono");
+  const [status, setStatus] = React.useState("aguardando dono");
 
   return (
     <>
@@ -27,6 +28,10 @@ export default function Admin() {
         </div>
 
         <Button text="Cadastrar Objeto" />
+      </section>
+
+      <section className="objects-display">
+        <ItemsListContainer selectedFilter={status} orderBy="status" />
       </section>
     </>
   );

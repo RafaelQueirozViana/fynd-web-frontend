@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import ObjectCard from "./ObjectCard";
+import ItemCard from "./ItemCard";
 import "./objects-container.css";
-import loadProductsApi from "../../../../Services/productsService";
+import loadProductsApi from "../../Services/productsService";
 
-export default function ItemsListContainer({ selectedFilter }) {
+export default function ItemsListContainer({ selectedFilter, orderBy }) {
   const [itemsList, setProducts] = useState([]);
 
   async function loadProducts() {
     try {
       const productsList = await loadProductsApi();
-      setProducts(productsList)
-   
+      setProducts(productsList);
     } catch (error) {
-      console.log("http error "+ error);
+      console.log("http error " + error);
     }
   }
 
@@ -21,19 +20,17 @@ export default function ItemsListContainer({ selectedFilter }) {
   }, []);
 
   const displayedItems =
-    selectedFilter == "Todas"
+    selectedFilter == "todas"
       ? itemsList
-      : itemsList.filter((item) => item.categoria == selectedFilter);
+      : itemsList.filter((item) => item[orderBy] == selectedFilter);
 
-
+  console.log(displayedItems);
 
   return (
     <div className="items-container">
       {displayedItems.map((object) => (
-        <ObjectCard key={object.id} item={object} />
+        <ItemCard key={object.id} item={object} />
       ))}
-
-      {/* <ObjectCard/> */}
     </div>
   );
 }

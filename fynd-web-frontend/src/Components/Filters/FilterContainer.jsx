@@ -9,6 +9,7 @@ export default function FilterContainer({
 }) {
   function changeFilter(filter) {
     setFilter(filter);
+    console.log(filter);
   }
 
   return (

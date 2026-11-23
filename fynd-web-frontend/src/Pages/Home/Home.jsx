@@ -2,19 +2,18 @@ import React, { useState } from "react";
 import "./home.css";
 import SearchInput from "../../Components/SearchInput/SearchInput";
 import FilterContainer from "../../Components/Filters/FilterContainer";
+import ItemsListContainer from "../../Components/ItemsSection/ItemsListContainer";
 import StatisticContainer from "./Components/Statistics/StatisticContainer";
-import ObjectContainer from "./Components/ItemsSection/ItemsListContainer";
-import ItemsListContainer from "./Components/ItemsSection/ItemsListContainer";
 
 const categoriesList = [
-  "Todas",
-  "Eletrônicos",
-  "Documentos",
-  "Roupas",
-  "Acessórios",
-  "Chaves",
-  "Bolsas e mochilas",
-  "Outros",
+  "todas",
+  "eletrônicos",
+  "documentos",
+  "roupas",
+  "acessórios",
+  "chaves",
+  "bolsas e mochilas",
+  "outros",
 ];
 
 export default function Home() {
@@ -50,7 +49,10 @@ export default function Home() {
 
       <section className="found-objects-section">
         <h1 className="section-title">Encontrados recentemente</h1>
-        <ItemsListContainer selectedFilter={selectedCategory} />
+        <ItemsListContainer
+          selectedFilter={selectedCategory}
+          orderBy="categoria"
+        />
       </section>
     </>
   );
