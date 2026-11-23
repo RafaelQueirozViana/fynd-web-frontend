@@ -1,0 +1,50 @@
+.register-item-popup {
+    display: grid;
+    gap: 20px;
+    background-color: var(--card-background);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+}
+
+.top-popup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-popup .close-popup-btn {
+    padding: 10px;
+    background-color: transparent;
+    color: var(--paragraph-color);
+    font-size: 1.5rem;
+}
+
+.register-item-popup .form-inputbox {
+    display: grid;
+    gap: 10px;
+}
+
+
+.register-item-popup .categories-register {
+    display: grid;
+    gap: 10px;
+}
+
+.register-item-popup .categories-display {
+    display: flex;
+    gap: 10px;
+}
+
+.register-item-popup .categories-display .filter-container li{
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+}
+
+.register-item-popup .categories-display .create-category-btn {
+    background-color: transparent;
+    border: 1px solid var(--main-purple);
+    padding: 10px 18px;
+    color: var(--main-purple);
+    border-radius: 20px;
+    width: max-content;
+    text-transform: capitalize;
+}

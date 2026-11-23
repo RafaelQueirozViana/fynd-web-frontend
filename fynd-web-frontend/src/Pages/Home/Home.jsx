@@ -22,13 +22,13 @@ export default function Home() {
             Itens encontrados no campus ficam guardados aqui. Ache o seu,
             confirme que é dono e retire na secretaria.
           </p>
-          <SearchInput />
+          <SearchInput id="find-item-input" type="text" />
         </div>
       </section>
 
       <section className="categories-section">
         <FilterContainer
-          filtersList={categoriesList}
+          filtersList={["todas", ...categoriesList]}
           currentFilter={selectedCategory}
           setFilter={setSelectedCategory}
         />

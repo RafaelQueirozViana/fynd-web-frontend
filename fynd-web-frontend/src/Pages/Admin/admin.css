@@ -9,6 +9,10 @@
     gap: 15px;
 }
 
+.admin-top .search-input {
+min-width: 400px;
+}
+
 .admin-top .objects-nav {
     display: flex;
     align-items: center;
@@ -22,17 +26,18 @@
     gap: 10px;
 }
 
-.buttons-container {
+.objects-display .buttons-container {
     display: flex;
     justify-content: right;
     gap: 10px;
     padding: 0 20px;
 }
 
-.buttons-container button{
+.objects-display .buttons-container button{
     font-size: 1rem;
 }
 
-.buttons-container .delete-btn {
+.objects-display .buttons-container .delete-btn {
     background-color: rgba(251, 86, 86, 0.724);
 }
+

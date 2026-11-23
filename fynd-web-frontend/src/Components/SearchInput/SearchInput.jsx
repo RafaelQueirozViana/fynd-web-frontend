@@ -1,8 +1,17 @@
-import React from 'react'
-import "./searchInput.css"
+import React from "react";
+import "./searchInput.css";
 
-export default function SearchInput() {
+export default function SearchInput({
+  type = "text",
+  id = "",
+  placeholderText,
+}) {
   return (
-       <input type="text" placeholder='Buscar por nome ou local' className='search-input' />
-  )
+    <input
+      type={type}
+      id={id}
+      className="search-input"
+      placeholder={placeholderText}
+    />
+  );
 }

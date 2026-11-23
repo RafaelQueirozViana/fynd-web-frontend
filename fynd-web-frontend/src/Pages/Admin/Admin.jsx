@@ -4,6 +4,7 @@ import FilterContainer from "../../Components/Filters/FilterContainer";
 import Button from "../../Components/Button/Button";
 import "./admin.css";
 import ItemsListContainer from "../../Components/ItemsSection/ItemsListContainer";
+import RegisterItemPopup from "./Components/FormPopup/RegisterItemPopup";
 
 const statusList = ["aguardando dono", "devolvido"];
 
@@ -18,7 +19,7 @@ export default function Admin() {
           <p>6 no total · 5 aguardando dono · 1 devolvido</p>
 
           <nav className="objects-nav">
-            <SearchInput />
+            <SearchInput placeholderText="Buscar objeto por nome ou local" />
             <FilterContainer
               filtersList={statusList}
               currentFilter={status}
@@ -38,6 +39,8 @@ export default function Admin() {
           </div>
         </ItemsListContainer>
       </section>
+
+      <RegisterItemPopup />
     </>
   );
 }

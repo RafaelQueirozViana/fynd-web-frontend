@@ -2,7 +2,6 @@ import { useState } from "react";
 
 function useCategories() {
   const [categoriesList, setCategories] = useState([
-    "todas",
     "eletrônicos",
     "documentos",
     "roupas",
