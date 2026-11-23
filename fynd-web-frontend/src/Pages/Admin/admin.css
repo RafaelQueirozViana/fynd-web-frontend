@@ -19,3 +19,18 @@
     flex-wrap: nowrap;
     gap: 10px;
 }
+
+.buttons-container {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.buttons-container button{
+    font-size: 1rem;
+}
+
+.buttons-container .delete-btn {
+    background-color: rgba(251, 86, 86, 0.724);
+}

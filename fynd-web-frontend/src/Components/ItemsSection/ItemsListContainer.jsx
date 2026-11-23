@@ -3,7 +3,11 @@ import ItemCard from "./ItemCard";
 import "./objects-container.css";
 import loadProductsApi from "../../Services/productsService";
 
-export default function ItemsListContainer({ selectedFilter, orderBy }) {
+export default function ItemsListContainer({
+  selectedFilter,
+  orderBy,
+  children,
+}) {
   const [itemsList, setProducts] = useState([]);
 
   async function loadProducts() {
@@ -24,12 +28,10 @@ export default function ItemsListContainer({ selectedFilter, orderBy }) {
       ? itemsList
       : itemsList.filter((item) => item[orderBy] == selectedFilter);
 
-  console.log(displayedItems);
-
   return (
     <div className="items-container">
       {displayedItems.map((object) => (
-        <ItemCard key={object.id} item={object} />
+        <ItemCard key={object.id} item={object} extraContent={children} />
       ))}
     </div>
   );

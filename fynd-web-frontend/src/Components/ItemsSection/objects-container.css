@@ -8,12 +8,12 @@
     display: grid;
     grid-template-rows: 1.5fr 1fr;
     background-color: var(--card-background);
-    height: 400px;
+    height: 420px;
     border-radius: 20px;
+    padding: 20px 0;
 }
 
 .object-image {
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJqrYLbL-wUtEMg4hV-UAlkTNVbzmfvBs7ThZXp-d5MbqQPteYo-8KmEE&s=10);
     background-position: center;
     background-size: cover;
     margin: 15px;

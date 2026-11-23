@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ItemCard({ item }) {
+export default function ItemCard({ item, extraContent }) {
   return (
     <div className="object-card">
       <div
@@ -12,6 +12,8 @@ export default function ItemCard({ item }) {
         <p className="object-category">{item.categoria}</p>
         <p className="found-location">Encontrada em: {item.encontradoEm}</p>
       </div>
+
+      {extraContent ? extraContent : null}
     </div>
   );
 }

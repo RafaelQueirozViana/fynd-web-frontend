@@ -17,7 +17,7 @@ const categoriesList = [
 ];
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = React.useState("Todas");
+  const [selectedCategory, setSelectedCategory] = React.useState("todas");
 
   return (
     <>
