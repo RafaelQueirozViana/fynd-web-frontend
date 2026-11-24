@@ -7,3 +7,9 @@
     color: #fff;
     font-size: 1rem;
 }
+
+ .primary-button.black {
+    background-color: #1B1528;
+    border: 1px solid var(--border-color);
+
+}

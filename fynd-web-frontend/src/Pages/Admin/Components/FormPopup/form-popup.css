@@ -30,21 +30,6 @@ grid-column: 2/3;
   padding-bottom: 100px;
 }
 
-
-
-.objects-update-popup .popup-container .form-inputbox {
-    display: grid;
-    gap: 10px;
-}
-
-.objects-update-popup .popup-container .form-inputbox input{
-    display: grid;
-    background-color: var(--background-website);
-    gap: 10px;
-}
-
-
-
 .objects-update-popup .popup-container .categories-register {
     display: grid;
     gap: 10px;
@@ -89,8 +74,3 @@ grid-column: 2/3;
     border-radius: 10px;
 }
 
-.objects-update-popup .popup-container .bottom-popup .primary-button:first-child {
-    background-color: #1B1528;
-    border: 1px solid var(--border-color);
-
-}

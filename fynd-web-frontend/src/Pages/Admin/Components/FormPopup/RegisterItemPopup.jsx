@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FormInputBox from "./FormInputBox";
+import FormInputBox from "../../../../Components/Form/FormInputBox";
 import FilterContainer from "../../../../Components/Filters/FilterContainer";
 import useCategories from "../../../../hooks/useCategories";
 import Button from "../../../../Components/Button/Button";
@@ -68,7 +68,7 @@ export default function RegisterItemPopup({ isPopupOpen, setPopupOpen }) {
       />
 
       <div className="bottom-popup">
-        <Button text="Cancelar" onClick={setPopupOpen} />
+        <Button text="Cancelar" subclass="black" onClick={setPopupOpen} />
         <Button text="Salvar" />
       </div>
     </PopupContainer>

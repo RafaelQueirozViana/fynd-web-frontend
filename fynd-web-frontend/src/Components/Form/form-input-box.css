@@ -1,0 +1,11 @@
+ .form-inputbox {
+    display: grid;
+    gap: 10px;
+}
+
+
+.form-inputbox input{
+    display: grid;
+    background-color: var(--background-website);
+    gap: 10px;
+}

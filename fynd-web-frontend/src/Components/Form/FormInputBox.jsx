@@ -1,5 +1,6 @@
 import React from "react";
-import SearchInput from "../../../../Components/SearchInput/SearchInput";
+import SearchInput from "../SearchInput/SearchInput";
+import "./form-input-box.css";
 
 export default function FormInputBox({
   id,
