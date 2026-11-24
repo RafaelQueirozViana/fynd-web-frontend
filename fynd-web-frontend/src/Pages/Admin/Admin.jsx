@@ -46,10 +46,12 @@ export default function Admin() {
         </ItemsListContainer>
       </section>
 
-      <RegisterItemPopup
-        isPopupOpen={isPopupOpen}
-        setPopupOpen={setTogglePopup}
-      />
+      <aside className="objects-update-popup">
+        <RegisterItemPopup
+          isPopupOpen={isPopupOpen}
+          setPopupOpen={setTogglePopup}
+        />
+      </aside>
     </>
   );
 }

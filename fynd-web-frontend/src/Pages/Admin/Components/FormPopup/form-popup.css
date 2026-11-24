@@ -1,39 +1,3 @@
-.popup-overlay {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.574);
-    width: 100%;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    display: none;
-}
-
-.popup-overlay:has(+ .register-item-popup.active) {
-  display: flex;
-}
-
-
-.register-item-popup {
-    /* display: grid; */
-    gap: 20px;
-    background-color: var(--card-background);
-    padding: 3rem 2rem;
-    border-radius: 20px;
-    grid-template-columns: 1fr 1fr;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    display: none;
-   
-}
-
-
-
-.register-item-popup.active {
-   display: grid;
-}
 
 .top-popup {
     display: flex;
@@ -48,19 +12,19 @@
     font-size: 1.5rem;
 }
 
-.register-item-popup * {
+.objects-update-popup .popup-container * {
    grid-column: 1/3;
 }
 
-.register-item-popup .form-inputbox:nth-of-type(4) {
+.objects-update-popup .popup-container .form-inputbox:nth-of-type(4) {
 grid-column: 1/2;
 }
 
-.register-item-popup .form-inputbox:nth-of-type(5) {
+.objects-update-popup .popup-container .form-inputbox:nth-of-type(5) {
 grid-column: 2/3;
 }
 
-.register-item-popup :nth-last-child(1 of .form-inputbox) input {
+.objects-update-popup .popup-container :nth-last-child(1 of .form-inputbox) input {
   height: max-content;
   padding-top: 12px;    
   padding-bottom: 100px;
@@ -68,12 +32,12 @@ grid-column: 2/3;
 
 
 
-.register-item-popup .form-inputbox {
+.objects-update-popup .popup-container .form-inputbox {
     display: grid;
     gap: 10px;
 }
 
-.register-item-popup .form-inputbox input{
+.objects-update-popup .popup-container .form-inputbox input{
     display: grid;
     background-color: var(--background-website);
     gap: 10px;
@@ -81,24 +45,24 @@ grid-column: 2/3;
 
 
 
-.register-item-popup .categories-register {
+.objects-update-popup .popup-container .categories-register {
     display: grid;
     gap: 10px;
 }
 
-.register-item-popup .categories-display {
+.objects-update-popup .popup-container .categories-display {
     display: grid;
     grid-template-rows: 1fr;
     gap: 10px;
 
 }
 
-.register-item-popup .categories-display .filter-container li{
+.objects-update-popup .popup-container .categories-display .filter-container li{
     border: 1px solid var(--border-color);
     border-radius: 20px;
 }
 
-.register-item-popup .categories-display .create-category-btn {
+.objects-update-popup .popup-container .categories-display .create-category-btn {
     background-color: transparent;
     border: 1px solid var(--main-purple);
     padding: 10px 18px;
@@ -111,7 +75,7 @@ grid-column: 2/3;
     text-transform: capitalize;
 }
 
-.register-item-popup  .bottom-popup {
+.objects-update-popup .popup-container  .bottom-popup {
     display: flex;
     justify-content: end;
     gap: 15px;
@@ -119,13 +83,13 @@ grid-column: 2/3;
     padding: 25px 0;
 }
 
-.register-item-popup  .bottom-popup .primary-button {
+.objects-update-popup .popup-container  .bottom-popup .primary-button {
     padding: 15px 40px;
     font-size: 1.1rem;
     border-radius: 10px;
 }
 
-.register-item-popup  .bottom-popup .cancel-popup {
+.objects-update-popup .popup-container .bottom-popup .primary-button:first-child {
     background-color: #1B1528;
     border: 1px solid var(--border-color);
 
