@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchInput from "../../Components/SearchInput/SearchInput";
 import FilterContainer from "../../Components/Filters/FilterContainer";
 import Button from "../../Components/Button/Button";
@@ -10,6 +10,12 @@ const statusList = ["aguardando dono", "devolvido"];
 
 export default function Admin() {
   const [status, setStatus] = React.useState("aguardando dono");
+  const [isPopupOpen, setPopupOpen] = useState(false);
+
+  function setTogglePopup() {
+    console.log("dasd");
+    setPopupOpen(!isPopupOpen);
+  }
 
   return (
     <>
@@ -28,7 +34,7 @@ export default function Admin() {
           </nav>
         </div>
 
-        <Button text="Cadastrar Objeto" />
+        <Button onClick={setTogglePopup} text="Cadastrar Objeto" />
       </section>
 
       <section className="objects-display">
@@ -40,7 +46,10 @@ export default function Admin() {
         </ItemsListContainer>
       </section>
 
-      <RegisterItemPopup />
+      <RegisterItemPopup
+        isPopupOpen={isPopupOpen}
+        setPopupOpen={setTogglePopup}
+      />
     </>
   );
 }
