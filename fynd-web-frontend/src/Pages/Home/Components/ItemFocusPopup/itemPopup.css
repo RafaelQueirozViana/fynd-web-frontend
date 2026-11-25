@@ -1,5 +1,4 @@
 .focus-object-popup .popup-container {
-    display: grid;
     grid-template-columns: 1f 1.5fr;
     max-width: 100%;
 }

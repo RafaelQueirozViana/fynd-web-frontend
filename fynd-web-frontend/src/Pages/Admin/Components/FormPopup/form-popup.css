@@ -1,16 +1,8 @@
-
-.top-popup {
-    display: flex;
-    justify-content: space-between;
-
+.objects-update-popup .popup-container {
+    padding: 10px 40px;
+    padding-top: 40px;
 }
 
-.top-popup .close-popup-btn {
-    padding: 10px;
-    background-color: transparent;
-    color: var(--paragraph-color);
-    font-size: 1.5rem;
-}
 
 .objects-update-popup .popup-container * {
    grid-column: 1/3;
@@ -29,6 +21,7 @@ grid-column: 2/3;
   padding-top: 12px;    
   padding-bottom: 100px;
 }
+
 
 .objects-update-popup .popup-container .categories-register {
     display: grid;

@@ -6,18 +6,15 @@ import Button from "../../../../Components/Button/Button";
 import "./form-popup.css";
 import PopupContainer from "../../../../Components/Popup/PopupContainer";
 
-export default function RegisterItemPopup({ isPopupOpen, setPopupOpen }) {
+export default function RegisterItemPopup({ isPopupOpen, togglePopup }) {
   const [categoriesList, createCategory] = useCategories();
   const [selectedCategoryBtn, setCategoryBtn] = useState("eletrônicos");
 
   return (
-    <PopupContainer isPopupOpen={isPopupOpen}>
-      <div className="top-popup">
+    <PopupContainer isPopupOpen={isPopupOpen} togglePopup={togglePopup}>
+    
         <h1>Cadastrar objeto</h1>
-        <button className="close-popup-btn" onClick={setPopupOpen}>
-          X
-        </button>
-      </div>
+  
 
       <FormInputBox
         id="name-input"
@@ -68,7 +65,7 @@ export default function RegisterItemPopup({ isPopupOpen, setPopupOpen }) {
       />
 
       <div className="bottom-popup">
-        <Button text="Cancelar" subclass="black" onClick={setPopupOpen} />
+        <Button text="Cancelar" subclass="black" onClick={togglePopup} />
         <Button text="Salvar" />
       </div>
     </PopupContainer>

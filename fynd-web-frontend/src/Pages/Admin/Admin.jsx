@@ -49,7 +49,7 @@ export default function Admin() {
       <aside className="objects-update-popup">
         <RegisterItemPopup
           isPopupOpen={isPopupOpen}
-          setPopupOpen={setTogglePopup}
+          togglePopup={setTogglePopup}
         />
       </aside>
     </>

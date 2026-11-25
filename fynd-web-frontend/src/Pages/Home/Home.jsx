@@ -55,7 +55,7 @@ export default function Home() {
       </section>
 
       <aside className="focus-object-popup">
-      <ItemPopup isPopupOpen={true}/>
+      <ItemPopup isPopupOpen={isPopupOpen} togglePopupOpen={togglePopupOpen}/>
       </aside>
     </>
   );

@@ -25,9 +25,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
-   
 }
 
 .popup-container.active {
-   display: grid;
+   display: grid !important;
+}
+
+
+.close-popup-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--paragraph-color);
+    font-size: 1.7rem;
+    background-color: transparent;
+    
+    
 }

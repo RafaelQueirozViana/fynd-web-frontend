@@ -6,7 +6,7 @@ import "./itemPopup.css";
 
 export default function ItemPopup({isPopupOpen, togglePopupOpen}) {
   return (
-    <PopupContainer isPopupOpen={isPopupOpen}>
+    <PopupContainer isPopupOpen={isPopupOpen} togglePopup={togglePopupOpen}>
       <div className="object-info-box">
         <img src="https://thumbs.dreamstime.com/b/escape-room-concept-vintage-key-blue-background-copy-space-abstract-text-170716152.jpg" />
         <p className="bordered-status-text">Chaves</p>
