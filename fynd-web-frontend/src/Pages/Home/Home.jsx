@@ -6,6 +6,7 @@ import ItemsListContainer from "../../Components/ItemsSection/ItemsListContainer
 import PopupContainer from "../../Components/Popup/PopupContainer";
 import StatisticContainer from "./Components/Statistics/StatisticContainer";
 import useCategories from "../../hooks/useCategories";
+import ItemPopup from "./Components/ItemFocusPopup/ItemPopup";
 
 
 export default function Home() {
@@ -54,7 +55,7 @@ export default function Home() {
       </section>
 
       <aside className="focus-object-popup">
-      
+      <ItemPopup isPopupOpen={true}/>
       </aside>
     </>
   );

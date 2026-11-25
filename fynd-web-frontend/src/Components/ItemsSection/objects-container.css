@@ -4,7 +4,7 @@
     gap: 20px;
 }
 
-.object-card {
+.items-container .object-card {
     display: grid;
     grid-template-rows: 1.5fr 1fr;
     background-color: var(--card-background);
@@ -14,27 +14,27 @@
     text-transform: capitalize;
 }
 
-.object-image {
+.items-container .object-image {
     background-position: center;
     background-size: cover;
     margin: 15px;
     border-radius: 10px;
 }
 
-.object-info {
+.items-container .object-info {
     display: grid;
     gap: 15x;
     padding: 20px;
     border-top: 1px solid var(--border-color);
 }
 
-.object-info .object-name {
+.items-container .object-info .object-name {
     font-size: 1.2rem;
     color: #fff;
     font-weight: 500;
 }
 
-.object-info .object-category {
+.items-container .object-info .object-category {
     color: var(--main-purple);
     font-size: 18px;
 }

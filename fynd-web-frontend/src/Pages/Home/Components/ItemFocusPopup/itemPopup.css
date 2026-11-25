@@ -1,0 +1,83 @@
+.focus-object-popup .popup-container {
+    display: grid;
+    grid-template-columns: 1f 1.5fr;
+    max-width: 100%;
+}
+
+.focus-object-popup .popup-container .object-info-box {
+    display: grid;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.focus-object-popup .popup-container .object-info-box img{
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.focus-object-popup .popup-container .bordered-status-text {
+    padding: 5px 15px;
+    color: #8B12FE;
+    border: 1px solid #8B12FE;
+    border-radius: 15px;
+    width: max-content;
+    text-transform: uppercase;
+    font-size: .9rem;
+}
+
+.focus-object-popup .popup-container .object-name {
+    font-size: 2rem ;
+  
+}
+
+.focus-object-popup .popup-container .local-card {
+background-color: #0B0812;
+padding: 10px 20px;
+padding: 20px;
+border-radius: 15px;
+}
+
+.focus-object-popup .popup-container .found-local {
+    display: grid;
+    gap: 15px;
+}
+
+.focus-object-popup .popup-container .topic-text {
+    text-transform: uppercase;
+    font-size: .9rem;
+    margin-bottom: 5px;
+}   
+
+.focus-object-popup .popup-container .info-value {
+    text-transform: capitalize;
+    font-size: 1rem;
+    color: #fff;
+
+}   
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.buttons-container .primary-button{
+    padding: 15px 30px;
+}
+
+.focus-object-popup .popup-container .owner-form {
+    display: grid;
+    gap: 20px;
+}
+
+.focus-object-popup .popup-container .owner-form .form-top {
+    display: grid;
+    gap: 10px;
+}
+
+.focus-object-popup .popup-container :nth-last-child(1 of .form-inputbox) input {
+  height: max-content;
+  padding-top: 12px;    
+  padding-bottom: 100px;
+}

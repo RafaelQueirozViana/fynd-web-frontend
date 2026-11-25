@@ -8,4 +8,5 @@
     display: grid;
     background-color: var(--background-website);
     gap: 10px;
+    color: #fff;
 }

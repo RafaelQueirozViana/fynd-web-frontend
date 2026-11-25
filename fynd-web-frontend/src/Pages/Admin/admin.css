@@ -41,3 +41,7 @@ min-width: 400px;
     background-color: rgba(251, 86, 86, 0.724);
 }
 
+
+.objects-update-popup .popup-container {
+    max-width: 700px;
+}
