@@ -1,22 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import SearchInput from "../../Components/SearchInput/SearchInput";
 import FilterContainer from "../../Components/Filters/FilterContainer";
 import ItemsListContainer from "../../Components/ItemsSection/ItemsListContainer";
-import PopupContainer from "../../Components/Popup/PopupContainer";
 import StatisticContainer from "./Components/Statistics/StatisticContainer";
 import useCategories from "../../hooks/useCategories";
 import ItemPopup from "./Components/ItemFocusPopup/ItemPopup";
 
+import postObjectRegister from "../../Services/productsService";
+
 export default function Home() {
   const [categoriesList] = useCategories();
   const [selectedCategory, setSelectedCategory] = React.useState("todas");
-  const [isPopupOpen, setPopupOpen] = useState(true);
+  const [isPopupOpen, setPopupOpen] = useState(false);
+
+  const objetoTeste = {
+    nome: "string",
+    descricao: "string",
+    quantidade: 0,
+    imagemUrl: "string",
+    encontradoEm: "string",
+    dataEncontrado: "2026-11-25",
+    categoria: "string",
+    status: "AGUARDANDO_DONO",
+  };
 
   function togglePopupOpen() {
     setPopupOpen(!isPopupOpen);
   }
 
+  
   return (
     <>
       <section className="top-section">
@@ -60,6 +73,21 @@ export default function Home() {
           togglePopupOpen={togglePopupOpen}
         />
       </aside>
+
+      <button
+        onClick={async () => {
+          try {
+            const resposta = await postObjectRegister(objetoTeste);
+            console.log("Sucesso:", resposta);
+            alert("Deu certo! Produto cadastrado.");
+          } catch (erro) {
+            console.error("Falhou:", erro);
+            alert("Deu erro ao cadastrar! Olhe o console (F12).");
+          }
+        }}
+      >
+        Clica pra teste
+      </button>
     </>
   );
 }

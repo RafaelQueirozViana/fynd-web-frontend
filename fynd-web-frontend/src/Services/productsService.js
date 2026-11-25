@@ -1,3 +1,7 @@
+import axios from "axios";
+
+const url = "https://nswmd7fm-8080.brs.devtunnels.ms/";
+
 export const testeProducts = [
   {
     id: 1,
@@ -43,16 +47,21 @@ export const testeProducts = [
 
 export default async function loadProductsApi() {
   try {
-   
-    const url = "https://nswmd7fm-8080.brs.devtunnels.ms/";
-    const response = await fetch(url + "/api/produtos");
-
-    if (!response.ok) {
-      throw new Error(`Erro HTTP: ${response.status}`);
-    }
-    return await response.json();
+    const response = await axios.get(url + "/api/produtos");
+    return response.data;
   } catch (error) {
     console.log("API indisponível. Utilizando dados locais:", error);
     return testeProducts;
+  }
+}
+
+export async function postObjectRegister(itemToRegister) {
+  try {
+    const response = await axios.post(url + "/api/produtos", itemToRegister);
+
+    return response.data;
+  } catch (error) {
+    console.log("HTTP POST ERROR: " + error);
+    throw error;
   }
 }
