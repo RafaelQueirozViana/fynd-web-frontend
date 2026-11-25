@@ -8,7 +8,7 @@ export default function PopupContainer({ isPopupOpen, togglePopup, children }) {
       <div className={"popup-container" + (isPopupOpen ? " active" : "")}>
          <button className="close-popup-btn" onClick={togglePopup}>X</button>
         {children}
-      </div>
+      </div>z
     </>
   );
 }

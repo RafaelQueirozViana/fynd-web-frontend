@@ -43,8 +43,8 @@ export const testeProducts = [
 
 export default async function loadProductsApi() {
   try {
-    // const url = "https://slmxbp9p-8080.brs.devtunnels.ms";
-    const url = "nada";
+   
+    const url = "https://nswmd7fm-8080.brs.devtunnels.ms/";
     const response = await fetch(url + "/api/produtos");
 
     if (!response.ok) {

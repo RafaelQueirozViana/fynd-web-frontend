@@ -6,6 +6,7 @@ import loadProductsApi from "../../Services/productsService";
 export default function ItemsListContainer({
   selectedFilter,
   orderBy,
+  onItemClick,
   children,
 }) {
   const [itemsList, setProducts] = useState([]);
@@ -13,6 +14,7 @@ export default function ItemsListContainer({
   async function loadProducts() {
     try {
       const productsList = await loadProductsApi();
+      console.log(productsList);
       setProducts(productsList);
     } catch (error) {
       console.log("http error " + error);
@@ -31,7 +33,12 @@ export default function ItemsListContainer({
   return (
     <div className="items-container">
       {displayedItems.map((object) => (
-        <ItemCard key={object.id} item={object} extraContent={children} />
+        <ItemCard
+          key={object.id}
+          item={object}
+          onItemClick={onItemClick}
+          extraContent={children}
+        />
       ))}
     </div>
   );

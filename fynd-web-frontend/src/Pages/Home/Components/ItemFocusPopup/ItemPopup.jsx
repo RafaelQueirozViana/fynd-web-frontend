@@ -4,7 +4,7 @@ import Button from "../../../../Components/Button/Button";
 import PopupContainer from "../../../../Components/Popup/PopupContainer";
 import "./itemPopup.css";
 
-export default function ItemPopup({isPopupOpen, togglePopupOpen}) {
+export default function ItemPopup({ isPopupOpen, togglePopupOpen }) {
   return (
     <PopupContainer isPopupOpen={isPopupOpen} togglePopup={togglePopupOpen}>
       <div className="object-info-box">

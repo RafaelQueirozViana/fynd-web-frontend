@@ -8,7 +8,6 @@ import StatisticContainer from "./Components/Statistics/StatisticContainer";
 import useCategories from "../../hooks/useCategories";
 import ItemPopup from "./Components/ItemFocusPopup/ItemPopup";
 
-
 export default function Home() {
   const [categoriesList] = useCategories();
   const [selectedCategory, setSelectedCategory] = React.useState("todas");
@@ -51,11 +50,15 @@ export default function Home() {
         <ItemsListContainer
           selectedFilter={selectedCategory}
           orderBy="categoria"
+          onItemClick={togglePopupOpen}
         />
       </section>
 
       <aside className="focus-object-popup">
-      <ItemPopup isPopupOpen={isPopupOpen} togglePopupOpen={togglePopupOpen}/>
+        <ItemPopup
+          isPopupOpen={isPopupOpen}
+          togglePopupOpen={togglePopupOpen}
+        />
       </aside>
     </>
   );
