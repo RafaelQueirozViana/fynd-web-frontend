@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import getProductsApi from "../Services/objectsService";
 
-export function useObjects() {
+export default function useObjects() {
   const [objectsList, setObjectsList] = useState([]);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [objectsError, setObjectsError] = useState(null);
+  const [isObjectsLoading, setIsObjectLoading] = useState(false);
 
   async function getRequireProducts() {
     try {
-      setIsLoading(true);
+      setIsObjectLoading(true);
       const response = await getProductsApi();
       setObjectsList(response);
     } catch (error) {
-      setError(error);
+      setObjectsError(error);
     } finally {
-      setIsLoading(false);
+      setIsObjectLoading(false);
     }
   }
 
@@ -22,5 +22,5 @@ export function useObjects() {
     getRequireProducts();
   }, []);
 
-  return { objectsList, error, isLoading };
+  return { objectsList, objectsError, isObjectsLoading };
 }

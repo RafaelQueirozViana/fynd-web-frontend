@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import getCategories from "../Services/categoriesService";
 
-export function useCategories() {
-  const [categoriesList, setCategoriesList] = useState("todas");
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+export default function useCategories() {
+  const [categoriesList, setCategoriesList] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState("atual");
+  const [categoryError, setCategoriesError] = useState(null);
+  const [isCategoriesLoading, setIsCategoriesLoading] = useState(false);
   async function getRequireCategories() {
     try {
       const response = await getCategories();
+
       setCategoriesList(response);
     } catch (error) {
-      setError(error);
+      setCategoriesError(error);
     } finally {
-      setIsLoading(true);
+      setIsCategoriesLoading(true);
     }
   }
 
@@ -20,5 +22,11 @@ export function useCategories() {
     getRequireCategories();
   }, []);
 
-  return { categoriesList, setCategoriesList, error, isLoading };
+  return {
+    categoriesList,
+    currentCategory,
+    setCurrentCategory,
+    categoryError,
+    isCategoriesLoading,
+  };
 }

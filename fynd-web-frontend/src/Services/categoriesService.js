@@ -1,14 +1,20 @@
 import axios from "axios";
 
 // const url = "https://nswmd7fm-8080.brs.devtunnels.ms/api";
-const url = "nadda";
+const url = "";
 
-const categoriesTest = ["eletrônico", "mochilas"];
+const categoriesTest = [
+  "acessórios",
+  "calçados",
+  "eletrônicos",
+  "bolsas e Sacolas",
+  "material escolar",
+];
 
 export default async function getCategories() {
   try {
     const response = await axios.get(url + "/categorias");
-    return response.data;
+    return categoriesTest;
   } catch (error) {
     console.log(error + " Api error! using  the test categories");
     return categoriesTest;

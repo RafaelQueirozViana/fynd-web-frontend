@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const url = "https://nswmd7fm-8080.brs.devtunnels.ms/";
+// const url = "https://nswmd7fm-8080.brs.devtunnels.ms/";
+const url = "mnada";
 
 export const testeObjects = [
   {
@@ -15,7 +16,7 @@ export const testeObjects = [
     id: 2,
     imagemUrl: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
     nome: "tênis vermelho",
-    categoria: "Calçados",
+    categoria: "calçados",
     encontradoEm: "Quadra esportiva",
     status: "aguardando dono",
   },
@@ -39,7 +40,7 @@ export const testeObjects = [
     id: 5,
     imagemUrl: "https://images.unsplash.com/photo-1544816155-12df9643f363",
     nome: "caderno",
-    categoria: "Material escolar",
+    categoria: "material escolar",
     encontradoEm: "Laboratório de informática",
     status: "devolvido",
   },
@@ -47,8 +48,9 @@ export const testeObjects = [
 
 export default async function getProductsApi() {
   try {
-    const response = await axios.get(url + "/api/produtos");
-    return response.data;
+    // const response = await axios.get(url + "/api/produtos");
+
+    return testeObjects;
   } catch (error) {
     console.log("API indisponível. Utilizando dados locais:", error);
     return testeObjects;
@@ -58,7 +60,7 @@ export default async function getProductsApi() {
 export async function postObjectApi(itemToRegister) {
   try {
     const response = await axios.post(url + "/api/produtos", itemToRegister);
-
+    console.log(response);
     return response.data;
   } catch (error) {
     console.log("HTTP POST ERROR: " + error);
