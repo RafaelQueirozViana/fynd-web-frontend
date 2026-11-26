@@ -6,17 +6,15 @@ import "./admin.css";
 import ItemsListContainer from "../../Components/ItemsSection/ItemsListContainer";
 import RegisterItemPopup from "./Components/FormPopup/RegisterItemPopup";
 import useObjects from "../../hooks/useObjects"
+import usePopup from "../../hooks/usePopup";
 
 const statusList = ["aguardando dono", "devolvido"];
 
 export default function Admin() {
   const {objectsList, objectsError, isObjectsLoading } = useObjects(); 
   const [status, setStatus] = useState("aguardando dono");
-  const [isPopupOpen, setPopupOpen] = useState(false);
+  const {isPopupOpen, togglePopupOpen} = usePopup();
 
-  function setTogglePopup() {
-    setPopupOpen(!isPopupOpen);
-  }
 
   return (
     <>
@@ -35,7 +33,7 @@ export default function Admin() {
           </nav>
         </div>
 
-        <Button onClick={setTogglePopup} text="Cadastrar Objeto" />
+        <Button onClick={togglePopupOpen} text="Cadastrar Objeto" />
       </section>
 
       <section className="objects-display">
@@ -47,12 +45,16 @@ export default function Admin() {
         </ItemsListContainer>
       </section>
 
+    {isPopupOpen != true ? null : (
+
       <aside className="objects-update-popup">
         <RegisterItemPopup
           isPopupOpen={isPopupOpen}
-          togglePopup={setTogglePopup}
+          togglePopup={togglePopupOpen}
         />
       </aside>
+    )}
+
     </>
   );
 }
