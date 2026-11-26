@@ -14,19 +14,15 @@ export default function ItemsListContainer({
       ? itemsList
       : itemsList.filter((item) => item[orderBy] == selectedFilter);
 
-  
   return (
     <div className="items-container">
-
-   
-
-
       {displayedItems.map((object) => (
         <ItemCard
           key={object.id}
           item={object}
           onItemClick={onItemClick}
           extraContent={children}
+         
         />
       ))}
     </div>

@@ -6,17 +6,26 @@ import ItemsListContainer from "../../Components/ItemsSection/ItemsListContainer
 import StatisticContainer from "./Components/Statistics/StatisticContainer";
 import useCategories from "../../hooks/useCategories";
 import useObjects from "../../hooks/useObjects";
-import ItemPopup from "./Components/ItemFocusPopup/ItemPopup";
-
-
-
+import ItemViewerPopup from "./Components/ItemViewer/ItemViewerPopup";
+import usePopup from "../../hooks/usePopup";
 
 export default function Home() {
+
+  // Category and objects list states
   const {categoriesList, currentCategory, setCurrentCategory, categoryError, isCategoriesLoading, } = useCategories("todas");
   const {objectsList, objectsError, isObjectsLoading} = useObjects();
 
+  // Item viewer Popup State and selected object state
+  const {isPopupOpen, togglePopupOpen} = usePopup();
+  const [selectedObject, setSelectedObject] = useState(null);
+  
+  // Function that changes the default popup hook to increase the home's page rules
+  function toggleItemViewer(itemOnView)  {
+      togglePopupOpen(); // execulting the normal popup hook to set true or false for the 'popupOpen'
+      setSelectedObject(itemOnView) // getting the item object as parameter provided by itemCard click execultion and setting this value on selectedObject state
+  }
 
-  const [isPopupOpen, setPopupOpen] = useState(false);
+  console.log(selectedObject)
 
   const objetoTeste = {
     nome: "string",
@@ -28,10 +37,6 @@ export default function Home() {
     categoria: "string",
     status: "AGUARDANDO_DONO",
   };
-
-  function togglePopupOpen() {
-    setPopupOpen(!isPopupOpen);
-  }
 
   return ( 
     <>
@@ -61,23 +66,35 @@ export default function Home() {
         <StatisticContainer />
       </section>
 
+      {/* Objects List Section */}
+
       <section className="found-objects-section">
         <h1 className="section-title">Encontrados recentemente</h1>
         <ItemsListContainer
           selectedFilter={currentCategory}
           orderBy="categoria"
-          onItemClick={togglePopupOpen}
+          onItemClick={toggleItemViewer}
           itemsList={objectsList}
+          setSelectedObject={setSelectedObject}
+          
         />
       </section>
 
-      <aside className="focus-object-popup">
-        <ItemPopup
+{selectedObject == null ? null: (
+ <aside className="focus-object-popup">
+        <ItemViewerPopup
           isPopupOpen={isPopupOpen}
-          togglePopupOpen={togglePopupOpen}
+          togglePopupOpen={toggleItemViewer}
+          item={selectedObject}
         />
       </aside>
 
+
+
+) }
+
+
+     
       <button
         onClick={async () => {
           // try {

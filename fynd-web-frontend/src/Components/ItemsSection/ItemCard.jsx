@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ItemCard({ item, onItemClick, extraContent }) {
   return (
-    <div className="object-card" onClick={onItemClick}>
+    <div className="object-card" onClick={() => onItemClick(item)}>
       <div
         className="object-image"
         style={{ backgroundImage: `url(${item.imagemUrl})` }}

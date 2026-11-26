@@ -4,29 +4,27 @@ import Button from "../../../../Components/Button/Button";
 import PopupContainer from "../../../../Components/Popup/PopupContainer";
 import "./itemPopup.css";
 
-export default function ItemPopup({ isPopupOpen, togglePopupOpen }) {
+export default function ItemViewerPopup({ isPopupOpen, togglePopupOpen, item}) {
+  console.log("item: " + item)
   return (
     <PopupContainer isPopupOpen={isPopupOpen} togglePopup={togglePopupOpen}>
       <div className="object-info-box">
-        <img src="https://thumbs.dreamstime.com/b/escape-room-concept-vintage-key-blue-background-copy-space-abstract-text-170716152.jpg" />
-        <p className="bordered-status-text">Chaves</p>
-        <h2 className="object-name">Molho de chaves prateadas</h2>
+        <img src={item.imagemUrl} />
+        <p className="bordered-status-text">{item.categoria}</p>
+        <h2 className="object-name">{item.nome}</h2>
 
         <div className="found-local">
           <div className="local-card">
             <p className="topic-text">ENCONTRADO EM</p>
-            <p className="info-value">Estacionamento bloco B</p>
+            <p className="info-value">{item.encontradoEm}</p>
           </div>
 
           <div className="local-card">
             <p className="topic-text">DATA</p>
-            <p className="info-value">04 de novembro de 2026</p>
+            <p className="info-value">{item.nome}</p>
           </div>
-          <p>
-            Duas chaves prateadas presas numa argola, encontradas no chão perto
-            da vaga 12.
-          </p>
-          <p className="bordered-status-text">Aguardando dono</p>
+          <p>{item.nome}</p>
+          <p className="bordered-status-text">{item.status}</p>
         </div>
       </div>
       <form action="#">
