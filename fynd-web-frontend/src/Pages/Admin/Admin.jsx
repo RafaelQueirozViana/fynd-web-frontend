@@ -46,7 +46,6 @@ export default function Admin() {
       </section>
 
     {isPopupOpen != true ? null : (
-
       <aside className="objects-update-popup">
         <RegisterItemPopup
           isPopupOpen={isPopupOpen}

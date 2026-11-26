@@ -1,7 +1,8 @@
 import axios from "axios";
 
-// const url = "https://nswmd7fm-8080.brs.devtunnels.ms/api";
-const url = "";
+//axios.defaults.baseURL = "https://nswmd7fm-8080.brs.devtunnels.ms/api";
+
+axios.defaults.baseURL = "";
 
 const categoriesTest = [
   "acessórios",
@@ -13,7 +14,7 @@ const categoriesTest = [
 
 export default async function getCategories() {
   try {
-    const response = await axios.get(url + "/categorias");
+    const response = await axios.get("/categorias");
     return categoriesTest;
   } catch (error) {
     console.log(error + " Api error! using  the test categories");

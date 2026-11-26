@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// const url = "https://nswmd7fm-8080.brs.devtunnels.ms/";
-const url = "mnada";
+axios.defaults.baseURL = "https://nswmd7fm-8080.brs.devtunnels.ms/api";
 
 const testeObjects = [
   {
@@ -48,7 +47,7 @@ const testeObjects = [
 
 export default async function getProductsApi() {
   try {
-    // const response = await axios.get(url + "/api/produtos");
+    // const response = await axios.get("/produtos");
     return testeObjects;
   } catch (error) {
     console.log("API indisponível. Utilizando dados locais:", error);
@@ -58,7 +57,7 @@ export default async function getProductsApi() {
 
 export async function postObjectApi(itemToRegister) {
   try {
-    const response = await axios.post(url + "/api/produtos", itemToRegister);
+    const response = await axios.post("/produtos", itemToRegister);
     console.log(response);
     return response.data;
   } catch (error) {
