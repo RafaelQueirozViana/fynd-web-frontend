@@ -32,7 +32,7 @@ export default function Home() {
   function togglePopupOpen() {
     setPopupOpen(!isPopupOpen);
   }
-  
+
   return ( 
     <>
       <section className="top-section">
@@ -51,7 +51,7 @@ export default function Home() {
 
       <section className="categories-section">
         <FilterContainer
-          filtersList={categoriesList}
+          filtersList={["todas",...categoriesList]}
           currentFilter={currentCategory}
           setFilter={setCurrentCategory}
         />

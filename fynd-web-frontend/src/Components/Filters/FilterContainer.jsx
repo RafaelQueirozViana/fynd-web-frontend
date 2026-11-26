@@ -12,6 +12,7 @@ export default function FilterContainer({
     console.log(filter);
   }
 
+
   return (
     <ul className="filter-container">
       {filtersList.map((filter) => {

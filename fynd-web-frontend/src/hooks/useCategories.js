@@ -3,7 +3,7 @@ import getCategories from "../Services/categoriesService";
 
 export default function useCategories() {
   const [categoriesList, setCategoriesList] = useState([]);
-  const [currentCategory, setCurrentCategory] = useState("atual");
+  const [currentCategory, setCurrentCategory] = useState("todas");
   const [categoryError, setCategoriesError] = useState(null);
   const [isCategoriesLoading, setIsCategoriesLoading] = useState(false);
   async function getRequireCategories() {
@@ -18,7 +18,7 @@ export default function useCategories() {
     }
   }
 
-  useState(() => {
+  useEffect(() => {
     getRequireCategories();
   }, []);
 

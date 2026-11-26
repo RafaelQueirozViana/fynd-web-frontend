@@ -18,7 +18,7 @@ export default function useObjects() {
     }
   }
 
-  useState(() => {
+  useEffect(() => {
     getRequireProducts();
   }, []);
 
