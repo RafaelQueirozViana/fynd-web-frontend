@@ -12,7 +12,7 @@ import ItemPopup from "./Components/ItemFocusPopup/ItemPopup";
 
 
 export default function Home() {
-  const {categoriesList, currentCategory, setCurrentCategory, categoryError, isCategoriesLoading, } = useCategories();
+  const {categoriesList, currentCategory, setCurrentCategory, categoryError, isCategoriesLoading, } = useCategories("todas");
   const {objectsList, objectsError, isObjectsLoading} = useObjects();
 
 

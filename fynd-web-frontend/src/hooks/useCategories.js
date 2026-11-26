@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import getCategories from "../Services/categoriesService";
 
-export default function useCategories() {
+export default function useCategories(defaultFilter) {
   const [categoriesList, setCategoriesList] = useState([]);
-  const [currentCategory, setCurrentCategory] = useState("todas");
+  const [currentCategory, setCurrentCategory] = useState(defaultFilter); // like "all" or "returned"
   const [categoryError, setCategoriesError] = useState(null);
   const [isCategoriesLoading, setIsCategoriesLoading] = useState(false);
   async function getRequireCategories() {

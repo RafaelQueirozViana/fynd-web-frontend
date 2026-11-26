@@ -7,15 +7,12 @@ import "./form-popup.css";
 import PopupContainer from "../../../../Components/Popup/PopupContainer";
 
 export default function RegisterItemPopup({ isPopupOpen, togglePopup }) {
-  const [categoriesList, createCategory] = useCategories();
-  const [selectedCategoryBtn, setCategoryBtn] = useState("eletrônicos");
+  const {categoriesList, currentCategory, setCurrentCategory, categoryError, isCategoriesLoading} = useCategories("eletrônicos")
+
 
   return (
     <PopupContainer isPopupOpen={isPopupOpen} togglePopup={togglePopup}>
-    
         <h1>Cadastrar objeto</h1>
-  
-
       <FormInputBox
         id="name-input"
         type="text"
@@ -28,9 +25,9 @@ export default function RegisterItemPopup({ isPopupOpen, togglePopup }) {
 
         <div className="categories-display">
           <FilterContainer
-            currentFilter={selectedCategoryBtn}
+            currentFilter={currentCategory}
             filtersList={categoriesList}
-            setFilter={setCategoryBtn}
+            setFilter={setCurrentCategory}
           />
           <button className="create-category-btn">+ Nova categoria</button>
         </div>

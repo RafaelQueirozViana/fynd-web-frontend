@@ -5,15 +5,16 @@ import Button from "../../Components/Button/Button";
 import "./admin.css";
 import ItemsListContainer from "../../Components/ItemsSection/ItemsListContainer";
 import RegisterItemPopup from "./Components/FormPopup/RegisterItemPopup";
+import useObjects from "../../hooks/useObjects"
 
 const statusList = ["aguardando dono", "devolvido"];
 
 export default function Admin() {
-  const [status, setStatus] = React.useState("aguardando dono");
+  const {objectsList, objectsError, isObjectsLoading } = useObjects(); 
+  const [status, setStatus] = useState("aguardando dono");
   const [isPopupOpen, setPopupOpen] = useState(false);
 
   function setTogglePopup() {
-    console.log("dasd");
     setPopupOpen(!isPopupOpen);
   }
 
@@ -38,7 +39,7 @@ export default function Admin() {
       </section>
 
       <section className="objects-display">
-        <ItemsListContainer selectedFilter={status} orderBy="status">
+        <ItemsListContainer selectedFilter={status} orderBy="status" itemsList={objectsList}>
           <div className="buttons-container">
             <Button text="Deletar" subclass="delete-btn" />
             <Button text="Alterar status" />
