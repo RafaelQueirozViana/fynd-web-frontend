@@ -1,25 +1,24 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 import getCategories from "../Services/categoriesService";
 
-async function receiveCategories() {
-  try {
-    const response = await getCategories();
-    return response;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-console.log(receiveCategories());
-function useCategories() {
-  const [categoriesList, setCategories] = useState(receiveCategories());
-
-  function createCategory(newCategory) {
-    setCategories([...categoriesList, newCategory]);
+export function useCategories() {
+  const [categoriesList, setCategoriesList] = useState("todas");
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  async function getRequireCategories() {
+    try {
+      const response = await getCategories();
+      setCategoriesList(response);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setIsLoading(true);
+    }
   }
 
-  return [categoriesList, createCategory];
-}
+  useState(() => {
+    getRequireCategories();
+  }, []);
 
-export default useCategories;
+  return { categoriesList, setCategoriesList, error, isLoading };
+}

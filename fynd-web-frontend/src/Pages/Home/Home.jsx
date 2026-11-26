@@ -7,10 +7,11 @@ import StatisticContainer from "./Components/Statistics/StatisticContainer";
 import useCategories from "../../hooks/useCategories";
 import ItemPopup from "./Components/ItemFocusPopup/ItemPopup";
 
-import postObjectRegister from "../../Services/productsService";
+import postObjectRegister from "../../Services/objectsService";
+
+const categoriesList = ["eletrônico", "mochilas"]
 
 export default function Home() {
-  const [categoriesList] = useCategories();
   const [selectedCategory, setSelectedCategory] = React.useState("todas");
   const [isPopupOpen, setPopupOpen] = useState(false);
 
@@ -28,9 +29,8 @@ export default function Home() {
   function togglePopupOpen() {
     setPopupOpen(!isPopupOpen);
   }
-
   
-  return (
+  return ( 
     <>
       <section className="top-section">
         <div className="text-box">

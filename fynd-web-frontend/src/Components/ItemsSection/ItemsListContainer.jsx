@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
 import "./objects-container.css";
-import loadProductsApi from "../../Services/productsService";
+import loadObjectsApi from "../../Services/objectsService";
+import { useObjects } from "../../hooks/useObjects";
 
 export default function ItemsListContainer({
   selectedFilter,
@@ -9,26 +10,13 @@ export default function ItemsListContainer({
   onItemClick,
   children,
 }) {
-  const [itemsList, setProducts] = useState([]);
 
-  async function loadProducts() {
-    try {
-      const productsList = await loadProductsApi();
-      console.log(productsList);
-      setProducts(productsList);
-    } catch (error) {
-      console.log("http error " + error);
-    }
-  }
-
-  useEffect(() => {
-    loadProducts();
-  }, []);
+  const {objectsList, error, isLoading} = useObjects();
 
   const displayedItems =
     selectedFilter == "todas"
-      ? itemsList
-      : itemsList.filter((item) => item[orderBy] == selectedFilter);
+      ? objectsList
+      : objectsList.filter((item) => item[orderBy] == selectedFilter);
 
   return (
     <div className="items-container">

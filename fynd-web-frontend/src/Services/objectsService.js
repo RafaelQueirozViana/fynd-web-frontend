@@ -2,7 +2,7 @@ import axios from "axios";
 
 const url = "https://nswmd7fm-8080.brs.devtunnels.ms/";
 
-export const testeProducts = [
+export const testeObjects = [
   {
     id: 1,
     imagemUrl: "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
@@ -45,17 +45,17 @@ export const testeProducts = [
   },
 ];
 
-export default async function loadProductsApi() {
+export default async function getProductsApi() {
   try {
     const response = await axios.get(url + "/api/produtos");
     return response.data;
   } catch (error) {
     console.log("API indisponível. Utilizando dados locais:", error);
-    return testeProducts;
+    return testeObjects;
   }
 }
 
-export async function postObjectRegister(itemToRegister) {
+export async function postObjectApi(itemToRegister) {
   try {
     const response = await axios.post(url + "/api/produtos", itemToRegister);
 
