@@ -39,24 +39,24 @@ export default function ItemViewerPopup({ isPopupOpen, togglePopupOpen, item}) {
           </div>
 
           <FormInputBox
-            id="name-input"
-            type="text"
             labelText="Seu nome completo *"
-            placeholderText="Ex.: Maria Oliveira"
-          />
-
-          <FormInputBox
-            id="contact-input"
-            type="email"
-            labelText="Contato (e-mail ou telefone) *"
-            placeholderText="Ex.: maria@email.com"
-          />
-
-          <FormInputBox
-            id="detail-input"
+            inputId="name-input"
             type="text"
+            placeholder="Ex.: Maria Oliveira"
+          />
+
+          <FormInputBox
+            labelText="Contato (e-mail ou telefone) *"
+            inputId="contact-input"
+            type="email"
+            placeholder="Ex.: maria@email.com"
+          />
+
+          <FormInputBox
             labelText="Algum detalhe que só o dono saberia"
-            placeholderText="Ex.: uma das chaves é do cadeado da bicicleta"
+            inputId="detail-input"
+            type="text"
+            placeholder="Ex.: uma das chaves é do cadeado da bicicleta"
           />
 
           <div className="buttons-container">

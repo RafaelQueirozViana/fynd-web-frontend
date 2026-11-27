@@ -6,9 +6,12 @@ export default function useCategories(defaultFilter) {
   const [currentCategory, setCurrentCategory] = useState(defaultFilter); // like "all" or "returned"
   const [categoryError, setCategoriesError] = useState(null);
   const [isCategoriesLoading, setIsCategoriesLoading] = useState(false);
+
+  console.log(getCategories());
   async function getRequireCategories() {
     try {
       const response = await getCategories();
+      console.log(response);
 
       setCategoriesList(response);
     } catch (error) {

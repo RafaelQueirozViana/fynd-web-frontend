@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SearchInput from "../../Components/SearchInput/SearchInput";
+import SearchInput from "../../Components/InputField/InputField";
 import FilterContainer from "../../Components/Filters/FilterContainer";
 import Button from "../../Components/Button/Button";
 import "./admin.css";
@@ -24,7 +24,7 @@ export default function Admin() {
           <p>6 no total · 5 aguardando dono · 1 devolvido</p>
 
           <nav className="objects-nav">
-            <SearchInput placeholderText="Buscar objeto por nome ou local" />
+            <SearchInput placeholder="Buscar objeto por nome ou local" />
             <FilterContainer
               filtersList={statusList}
               currentFilter={status}

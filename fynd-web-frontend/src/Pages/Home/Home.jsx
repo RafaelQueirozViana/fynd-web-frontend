@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./home.css";
-import SearchInput from "../../Components/SearchInput/SearchInput";
+import SearchInput from "./Components/SearchInput";
 import FilterContainer from "../../Components/Filters/FilterContainer";
 import ItemsListContainer from "../../Components/ItemsSection/ItemsListContainer";
 import StatisticContainer from "./Components/Statistics/StatisticContainer";
@@ -13,6 +13,8 @@ export default function Home() {
 
   // Category and objects list states
   const {categoriesList, currentCategory, setCurrentCategory, categoryError, isCategoriesLoading, } = useCategories("todas");
+
+  console.log(categoriesList)
   const {objectsList, objectsError, isObjectsLoading} = useObjects();
 
   // Item viewer Popup State and selected object state
@@ -25,7 +27,6 @@ export default function Home() {
       setSelectedObject(itemOnView) // getting the item object as parameter provided by itemCard click execultion and setting this value on selectedObject state
   }
 
-  console.log(selectedObject)
 
   const objetoTeste = {
     nome: "string",
@@ -50,7 +51,7 @@ export default function Home() {
             Itens encontrados no campus ficam guardados aqui. Ache o seu,
             confirme que é dono e retire na secretaria.
           </p>
-          <SearchInput id="find-item-input" type="text" />
+          <SearchInput id="find-item-input" type="text" placeholder="Procure itens perdidos pelo nome" />
         </div>
       </section>
 

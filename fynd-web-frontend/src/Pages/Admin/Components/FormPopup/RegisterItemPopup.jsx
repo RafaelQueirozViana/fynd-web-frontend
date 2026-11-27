@@ -7,17 +7,22 @@ import "./form-popup.css";
 import PopupContainer from "../../../../Components/Popup/PopupContainer";
 
 export default function RegisterItemPopup({ isPopupOpen, togglePopup }) {
-  const {categoriesList, currentCategory, setCurrentCategory, categoryError, isCategoriesLoading} = useCategories("eletrônicos")
+  const {categoriesList, currentCategory, setCurrentCategory, categoryError, isCategoriesLoading} = useCategories("eletrônicos");
+
+  function handleExpandPopup({target}) {
+    console.log(handleExpandPopup)
+  }
 
 
   return (
     <PopupContainer isPopupOpen={isPopupOpen} togglePopup={togglePopup}>
         <h1>Cadastrar objeto</h1>
       <FormInputBox
-        id="name-input"
-        type="text"
+        inputId="name-input"
         labelText="Nome do objeto"
-        placeholderText="Ex.: Fones de ouvido sem fio pretos"
+        type="text"
+        placeholder="Ex.: Fones de ouvido sem fio pretos"
+       
       />
 
       <div className="categories-register">
@@ -29,36 +34,36 @@ export default function RegisterItemPopup({ isPopupOpen, togglePopup }) {
             filtersList={categoriesList}
             setFilter={setCurrentCategory}
           />
-          <button className="create-category-btn">+ Nova categoria</button>
+          <button className="create-category-btn" onClick={handleExpandPopup}>+ Nova categoria</button>
         </div>
       </div>
 
       <FormInputBox
-        id="date-input"
-        type="date"
         labelText="Data em que foi encontrado"
-        placeholderText="dd/mm/aaaa"
+        inputId="date-input"
+        type="date"
+        placeholder="dd/mm/aaaa"
       />
 
       <FormInputBox
-        id="import-image-input"
-        type="text"
         labelText="Importar imagem"
-        placeholderText="Clique para importar imagem"
+        inputId="import-image-input"
+        type="text"
+        placeholder="Clique para importar imagem"
       />
 
       <FormInputBox
-        id="local-input"
+        inputId="local-input"
         type="text"
         labelText="Local onde foi encontrado"
-        placeholderText="Ex.: Cantina, bloco B…"
+        placeholder="Ex.: Cantina, bloco B…"
       />
 
       <FormInputBox
-        id="description-input"
+        inputId="description-input"
         type="text"
         labelText="Descrição"
-        placeholderText="Cor, marca, detalhes que ajudem o dono a reconhecer…"
+        placeholder="Cor, marca, detalhes que ajudem o dono a reconhecer…"
       />
 
       <div className="bottom-popup">

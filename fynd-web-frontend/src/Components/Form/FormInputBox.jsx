@@ -1,17 +1,16 @@
 import React from "react";
-import SearchInput from "../SearchInput/SearchInput";
+import SearchInput from "../InputField/InputField";
 import "./form-input-box.css";
 
 export default function FormInputBox({
-  id,
+  inputId,
   labelText,
-  type = "text",
-  placeholderText,
+  ...props
 }) {
   return (
     <div className="form-inputbox">
-      <label htmlFor={id}>{labelText}</label>
-      <SearchInput id={id} type={type} placeholderText={placeholderText} />
+      <label htmlFor={inputId}>{labelText}</label>
+      <SearchInput id={inputId} {...props}/>
     </div>
   );
 }

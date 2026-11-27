@@ -14,7 +14,7 @@ const categoriesTest = [
 
 export default async function getCategories() {
   try {
-    const response = await axios.get("/categorias");
+    console.log(categoriesTest);
     return categoriesTest;
   } catch (error) {
     console.log(error + " Api error! using  the test categories");
