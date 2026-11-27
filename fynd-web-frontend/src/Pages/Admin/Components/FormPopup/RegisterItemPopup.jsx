@@ -6,17 +6,14 @@ import Button from "../../../../Components/Button/Button";
 import "./form-popup.css";
 import PopupContainer from "../../../../Components/Popup/PopupContainer";
 import useForm from "../../../../hooks/useForm";
+import InputField from "../../../../Components/InputField/InputField";
 
 export default function RegisterItemPopup({ isPopupOpen, togglePopup }) {
   const {categoriesList, currentCategory, setCurrentCategory, categoryError, isCategoriesLoading} = useCategories("eletrônicos");
-   
   const [formItemData, handleFormData] = useForm(currentCategory);
-  console.log(formItemData)
+  const [categoryOpened, setCategoryOpened] = useState(false);
 
-
-  function handleExpandPopup({target}) {
-    console.log(handleExpandPopup)
-  }
+  console.log(categoryOpened)
 
   return (
     <PopupContainer isPopupOpen={isPopupOpen} togglePopup={togglePopup}>
@@ -43,7 +40,11 @@ export default function RegisterItemPopup({ isPopupOpen, togglePopup }) {
             filtersList={categoriesList}
             setFilter={setCurrentCategory}
           />
-          <button className="create-category-btn" onClick={handleExpandPopup}>+ Nova categoria</button>
+          <button className="create-category-btn" onClick={() => setCategoryOpened(!categoryOpened)}>{categoryOpened? "Cancelar" : "+ Nova categoria"}</button>
+
+          <div className={"opened-inputbox" + (categoryOpened ? " visible" : "") }> 
+            <InputField placeholder="Digite a nova categoria"/>
+          </div>
         </div>
       </div>
 
