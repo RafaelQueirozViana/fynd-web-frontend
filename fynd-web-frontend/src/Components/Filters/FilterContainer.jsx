@@ -12,7 +12,6 @@ export default function FilterContainer({
     
   }
 
-  console.log(currentFilter)
 
 
   return (

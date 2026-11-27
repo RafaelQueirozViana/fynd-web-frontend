@@ -1,15 +1,25 @@
 .objects-update-popup .popup-container {
+    padding: 0;
+    margin: 0;
+}
+
+.objects-update-popup .popup-container .create-object-container{
     padding: 10px 40px;
     padding-top: 40px;
+    display: grid;
+    gap: 
+    15px;
 }
 
 
 .objects-update-popup .popup-container * {
    grid-column: 1/3;
+ 
 }
 
 .objects-update-popup .popup-container .form-inputbox:nth-of-type(4) {
 grid-column: 1/2;
+
 }
 
 .objects-update-popup .popup-container .form-inputbox:nth-of-type(5) {

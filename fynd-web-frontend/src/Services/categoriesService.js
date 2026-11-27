@@ -14,7 +14,6 @@ const categoriesTest = [
 
 export default async function getCategories() {
   try {
-    console.log(categoriesTest);
     return categoriesTest;
   } catch (error) {
     console.log(error + " Api error! using  the test categories");
