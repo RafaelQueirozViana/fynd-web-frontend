@@ -37,7 +37,7 @@ export default function Admin() {
       </section>
 
       <section className="objects-display">
-        <ItemsListContainer selectedFilter={status} orderBy="status" itemsList={objectsList}>
+        <ItemsListContainer selectedFilter={status} orderBy="status" itemsList={objectsList} >
           <div className="buttons-container">
             <Button text="Deletar" subclass="delete-btn" />
             <Button text="Alterar status" />

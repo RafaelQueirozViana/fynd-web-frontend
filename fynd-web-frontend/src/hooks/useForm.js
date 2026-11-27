@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function useForm(currentCategory) {
-  console.log(currentCategory);
   const currentData = new Date();
   const defaultData = {
     nome: "",

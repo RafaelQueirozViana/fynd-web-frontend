@@ -13,7 +13,7 @@ export default function RegisterItemPopup({ isPopupOpen, togglePopup }) {
   const [formItemData, handleFormData] = useForm(currentCategory);
   const [categoryOpened, setCategoryOpened] = useState(false);
 
-  console.log(categoryOpened)
+  console.log(formItemData)
 
   return (
     <PopupContainer isPopupOpen={isPopupOpen} togglePopup={togglePopup}>

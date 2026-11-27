@@ -14,19 +14,17 @@ export default function Home() {
   // Category and objects list states
   const {categoriesList, currentCategory, setCurrentCategory, categoryError, isCategoriesLoading, } = useCategories("todas");
 
-  console.log(categoriesList)
   const {objectsList, objectsError, isObjectsLoading} = useObjects();
 
   // Item viewer Popup State and selected object state
   const {isPopupOpen, togglePopupOpen} = usePopup();
-  const [selectedObject, setSelectedObject] = useState(null);
+  const [selectedObject, setSelectedObject] = useState(null); 
   
-  // Function that changes the default popup hook to increase the home's page rules
+  // This toggle function is used for the item card on click will execulte this function, that change the selectedObject state and also define true or false for the popup open
   function toggleItemViewer(itemOnView)  {
       togglePopupOpen(); // execulting the normal popup hook to set true or false for the 'popupOpen'
       setSelectedObject(itemOnView) // getting the item object as parameter provided by itemCard click execultion and setting this value on selectedObject state
-  }
-
+  }  
 
   const objetoTeste = {
     nome: "string",
@@ -73,10 +71,10 @@ export default function Home() {
         <h1 className="section-title">Encontrados recentemente</h1>
         <ItemsListContainer
           selectedFilter={currentCategory}
+          itemsList={objectsList}
           orderBy="categoria"
           onItemClick={toggleItemViewer}
-          itemsList={objectsList}
-          setSelectedObject={setSelectedObject}
+       
           
         />
       </section>

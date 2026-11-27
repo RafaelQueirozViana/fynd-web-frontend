@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import getProductsApi from "../Services/objectsService";
+import getProductsApi, { deleteObjectApi } from "../Services/objectsService";
 
 export default function useObjects() {
   const [objectsList, setObjectsList] = useState([]);
   const [objectsError, setObjectsError] = useState(null);
   const [isObjectsLoading, setIsObjectLoading] = useState(false);
 
-  async function getRequireProducts() {
+  async function getRequireItems() {
     try {
       setIsObjectLoading(true);
       const response = await getProductsApi();
@@ -18,9 +18,20 @@ export default function useObjects() {
     }
   }
 
+  async function deleteRequireItem(id) {
+    try {
+      setIsObjectLoading(true);
+      const response = await deleteObjectApi(id);
+    } catch (error) {
+      setObjectsError(error);
+    } finally {
+      setIsObjectLoading(false);
+    }
+  }
+
   useEffect(() => {
-    getRequireProducts();
+    getRequireItems();
   }, []);
 
-  return { objectsList, objectsError, isObjectsLoading };
+  return { objectsList, objectsError, isObjectsLoading, deleteRequireItem };
 }

@@ -13,7 +13,7 @@ export default function ItemCard({ item, onItemClick, extraContent }) {
         <p className="found-location">Encontrada em: {item.encontradoEm}</p>
       </div>
 
-      {extraContent ? extraContent : null}
+      {extraContent ? extraContent  : null}
     </div>
   );
 }

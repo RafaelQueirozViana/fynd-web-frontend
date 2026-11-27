@@ -65,3 +65,12 @@ export async function postObjectApi(itemToRegister) {
     throw error;
   }
 }
+
+export async function deleteObjectApi(id) {
+  try {
+    const response = await axios.delete("/products/" + id);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+}
